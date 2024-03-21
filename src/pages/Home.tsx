@@ -1,23 +1,38 @@
 import { useEffect, useState } from 'react'
+import instance from '~/apis'
 import ProductList from '~/components/ProductList'
 import { TProduct } from '~/interfaces/product'
+
 
 const Home = () => {
   const [products, setProducts] = useState<TProduct[]>([])
 
   // ! Get API va lay ra duoc:
+  // cach 1
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/products')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setProducts(data)
+  //       return () => {
+  //         console.log('unmount')
+  //         //! cleanup function
+  //       }
+  //     })
+  // }, [])
 
+  // cach 2
   useEffect(() => {
-    fetch('http://localhost:3001/products')
-      .then((res) => res.json())
-      .then((data) => {
+    const getAllProducts = async () => {
+      try {
+        const { data } = await instance.get('/products')
         setProducts(data)
-        return () => {
-          console.log('unmount')
-          //! cleanup function
-        }
-      })
-  }, [])
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getAllProducts()
+  })
 
   /**
    * ! Dependency với 3 trường hợp:
@@ -28,9 +43,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* <button className="btn" onClick={() => handleClick()}>
-        Click Me!
-      </button> */}
+     
 
       <ProductList products={products} />
     </div>

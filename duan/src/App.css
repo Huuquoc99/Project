@@ -13916,3 +13916,7 @@ https://flickity.metafizzy.co
     justify-content: space-between;
 }
     
+.flexbox{
+  display: flex;
+  justify-content: space-between;
+}

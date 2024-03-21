@@ -94,24 +94,32 @@ const Header = () => {
           </a>
         </div>
       </section>
-      <section className="second-Sec" id="Second-sec-id">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-6 col-md-6 mx-auto second-sec">
-                    <img src="https://images.pexels.com/photos/8651023/pexels-photo-8651023.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        className="container-fluid"></img>
-                </div>
-                <div className="col-lg-6 col-md-6 mx-auto second-sec">
-                    <h2><span id="Welcome">Welcome to</span> Baker's Kitchen</h2>
-                    <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is
-                        pain, but because occasionally circumstances occur in which toil and pain can procure him some
-                        great pleasure. To take a trivial example, which of us ever undertakes laborious physical
-                        exercise.</p>
-                    <a href="#">About Us</a>
-                </div>
+      <section className='second-Sec' id='Second-sec-id'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-6 col-md-6 mx-auto second-sec'>
+              <img
+                src='https://images.pexels.com/photos/8651023/pexels-photo-8651023.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+                className='container-fluid'
+              ></img>
             </div>
+            <div className='col-lg-6 col-md-6 mx-auto second-sec'>
+              <h2>
+                <span id='Welcome'>Welcome to</span> Baker's Kitchen
+              </h2>
+              <p>
+                Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,
+                but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
+                To take a trivial example, which of us ever undertakes laborious physical exercise.
+              </p>
+              <a href='#'>About Us</a>
+            </div>
+          </div>
         </div>
-        </section>
+        <h1>OUR SPECIALTIES</h1>
+        <hr className='w-25 mx-auto text-dark'></hr>
+        <p>Fresh Bakery Items with the Finest Ingredients</p>
+      </section>
     </div>
   )
 }
