@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 const Header = () => {
   return (
     <div>
@@ -12,7 +14,9 @@ const Header = () => {
                 Home
               </a>
               <a href='#Second-sec-id' className='navicon'>
-                About Us
+                <NavLink to='/shop' className='nav-link'>
+                  Abuot Us
+                </NavLink>
               </a>
               <a href='#menu-id' className='navicon'>
                 Menu
@@ -116,9 +120,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <h1>OUR SPECIALTIES</h1>
-        <hr className='w-25 mx-auto text-dark'></hr>
-        <p>Fresh Bakery Items with the Finest Ingredients</p>
       </section>
     </div>
   )

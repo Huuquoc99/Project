@@ -1,36 +1,30 @@
-import React from 'react'
 import { Tproduct2 } from '~/types/product2'
 
-type TProps = {
-  products: Tproduct2[]
+type Props = {
+  product: Tproduct2
 }
 
-const Product = (props: TProps) => {
+const Product = (props: Props) => {
   return (
     <div>
-      {props.products.map((product) => (
-        <div key={product.id}>
-          <section className='MenuSection' id='menu-id'>
-            <div className='container '>
-              <div className='row row-cols-md-4 g-4'>
-                <div className='flexbox'>
-                  <div className='col Bakery-menu'>
-                   <div> <img src={product.images} alt={product.name} className='img-fluid'></img></div>
-                    <div><h3>{product.name}</h3></div>
-                    <div><h6>
-                      ${product.price}
-                      <span id='Weight'>{product.klo}</span>
-                    </h6></div>
-                    <div><a href='#'>Order</a></div>
-                  </div>
-                </div>
-              </div>
+      <section className='MenuSection' id='menu-id'>
+        <h1>OUR SPECIALTIES</h1>
+        <p>Fresh Bakery Items with the Finest Ingredients</p>
+        <div className='container-fluid'>
+          <div className='row'>
+            <div className='col-lg-3 col-md-4 col-sm-6 col-12 mx-auto Bakery-menu'>
+              <img src={props.product.images} alt={props.product.name} className='container-fluid'></img>
+              <h3>{props.product.name}</h3>
+              <h6>
+                ${props.product.price}
+                <span id='Weight'>{props.product.klo}</span>
+              </h6>
+              <a href='#'>Order</a>
             </div>
-          </section>
+          </div>
         </div>
-      ))}
+      </section>
     </div>
   )
 }
-
 export default Product

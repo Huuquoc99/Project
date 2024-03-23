@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react'
-import Product from '~/components/Product'
-import { Tproduct2 } from '~/types/product2'
+
+import ProductList from '~/components/ProductList'
+
 
 const Home = () => {
-  const [products, setProducts] = useState<Tproduct2[]>([])
+  // const [products, setProducts] = useState<Tproduct2[]>([])
 
   // ! Get API va lay ra duoc:
 
-  useEffect(() => {
-    fetch('http://localhost:3002/product2')
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data)
-        return () => {
-          console.log('unmount')
-          //! cleanup function
-        }
-      })
-  }, [])
+  // useEffect(() => {
+  //   fetch('http://localhost:3002/product2')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setProducts(data)
+  //       return () => {
+  //         console.log('unmount')
+  //         //! cleanup function
+  //       }
+  //     })
+  // }, [])
 
   /**
    * ! Dependency với 3 trường hợp:
@@ -28,7 +28,16 @@ const Home = () => {
 
   return (
     <div>
-      <Product products={products} />
+      
+       {/* <h2 className="sessionTitle">Danh cho nam:</h2>
+      <ProductList category="nam" />
+      <br />
+      <h2 className="sessionTitle">Danh cho nu:</h2>
+      <ProductList category="nu" />
+      <br /> */}
+      {/* <h2 className="sessionTitle">Danh cho tre em:</h2>
+      <ProductList category="kid" /> */}
+      <ProductList category='KID'/>
     </div>
   )
 }

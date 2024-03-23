@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { TProduct } from '~/interfaces/product'
 
 type TProps = {
@@ -13,9 +12,7 @@ const ProductList = (props: TProps) => {
       <h1>Danh sach san pham</h1>
       {props.products.map((product) => (
         <div key={product.id}>
-          <Link to={`/shop/${product.id}`}>
-            <h2>{product.title}</h2>
-          </Link>
+          <h2>{product.title}</h2>
           <p>{product.description}</p>
           <p>{product.price}</p>
           <p>{product.discountPercentage && 'Dang cap nhat'}</p>
